@@ -1,1 +1,1 @@
-# TaskDistributor
+# TaskDistributor - простой инструмент для распределения не простых заданий)
