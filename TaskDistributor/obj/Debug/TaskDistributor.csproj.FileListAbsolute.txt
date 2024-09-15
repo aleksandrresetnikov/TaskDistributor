@@ -1,0 +1,15 @@
+C:\Users\user\source\repos\TaskDistributor\bin\Debug\TaskDistributor.exe.config
+C:\Users\user\source\repos\TaskDistributor\bin\Debug\TaskDistributor.exe
+C:\Users\user\source\repos\TaskDistributor\bin\Debug\TaskDistributor.pdb
+C:\Users\user\source\repos\TaskDistributor\obj\Debug\TaskDistributor.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\TaskDistributor\obj\Debug\TaskDistributor.Properties.Resources.resources
+C:\Users\user\source\repos\TaskDistributor\obj\Debug\TaskDistributor.csproj.GenerateResource.cache
+C:\Users\user\source\repos\TaskDistributor\obj\Debug\TaskDistributor.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\TaskDistributor\obj\Debug\TaskDistributor.exe
+C:\Users\user\source\repos\TaskDistributor\obj\Debug\TaskDistributor.pdb
+C:\Users\user\source\repos\TaskDistributor\obj\Debug\TaskDistributor.Components.BorderLessFormController.resources
+C:\Users\user\source\repos\TaskDistributor\obj\Debug\TaskDistributor.MainForm.resources
+C:\Users\user\source\repos\TaskDistributor\obj\Debug\TaskDistributor.WorkingForm.resources
+C:\Users\user\source\repos\TaskDistributor\bin\Debug\FastColoredTextBox.dll
+C:\Users\user\source\repos\TaskDistributor\bin\Debug\FastColoredTextBox.xml
+C:\Users\user\source\repos\TaskDistributor\obj\Debug\TaskDistributor.csproj.CopyComplete

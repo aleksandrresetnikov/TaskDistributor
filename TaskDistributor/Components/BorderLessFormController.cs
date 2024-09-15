@@ -1,0 +1,99 @@
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace TaskDistributor.Components
+{
+    public partial class BorderLessFormController : BorderLessForm
+    {
+        public bool fullScreen = false;
+        private protected Size saveMinSize;
+        private protected Point saveMinPos;
+
+        public BorderLessFormController()
+        {
+            this.InitializeComponent();
+        }
+
+        private void TitleLabel_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.OnMouseMoveMethod(e);
+        }
+
+        private void TitleLabel_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.OnMouseDownMethod(e);
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonMaxType_Click(object sender, EventArgs e)
+        {
+            SetMaxSize();
+        }
+
+        private void buttonMinType_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        public void SetMaxSize(bool invert = true)
+        {
+            if (!this.fullScreen && !this.Resizeable) return;
+
+            if (/*this.WindowState == FormWindowState.Maximized*/this.fullScreen)
+            {
+                this.Location = saveMinPos;
+                this.Size = saveMinSize;
+                buttonMaxType.Text = "🗖";
+            }
+            else
+            {
+                saveMinPos = this.Location;
+                saveMinSize = this.Size;
+                this.Size = new Size(Screen.PrimaryScreen.WorkingArea.Width,
+                                     Screen.PrimaryScreen.WorkingArea.Height);
+                this.Location = new Point(0, 0);
+                buttonMaxType.Text = "❒";
+            }
+
+            if (invert)
+            {
+                this.fullScreen = !this.fullScreen;
+                /*this.WindowState = (this.WindowState == FormWindowState.Maximized ?
+                    FormWindowState.Normal : FormWindowState.Maximized);*/
+            }
+
+            this.Resizeable = !this.fullScreen;
+        }
+
+        private protected override void OnHeaderMouseMove(MouseEventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            if (/*this.WindowState == FormWindowState.Maximized*/this.fullScreen)
+            {
+                this.Location = saveMinPos;
+                this.Size = saveMinSize;
+                this.WindowState = FormWindowState.Normal;
+                this.fullScreen = false;
+                buttonMaxType.Text = "🗖";
+            }
+            this.Resizeable = !this.fullScreen;
+            base.OnHeaderMouseMove(e);
+        }
+
+        private protected override void OnHeaderMouseDoubleClick(MouseEventArgs e)
+        {
+            SetMaxSize();
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            this.Clean();
+        }
+    }
+}
